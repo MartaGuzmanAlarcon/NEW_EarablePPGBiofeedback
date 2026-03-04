@@ -7,7 +7,7 @@ function [filtSignal, invertedRaw] = preprocess_ppg(rawSignal, fs, range)
     
     % Design Zero-phase Butterworth filter 
     [b, a] = butter(2, range / (fs/2), 'bandpass');
-    filtSignal = filtfilt(b, a, centeredRaw);
+    filtSignal = filter(b, a, centeredRaw); % cambié a filter en vez filtfilter
     
     % Invert signal for systolic peak detection 
     filtSignal = -filtSignal; 

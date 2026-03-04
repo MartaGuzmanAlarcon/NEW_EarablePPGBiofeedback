@@ -11,5 +11,5 @@ function [filtAxes, rawAxes] = preprocess_imu_axes(imuTable, fs, range)
     
     % Design and apply filter to all columns
     [b, a] = butter(2, range / (fs/2), 'bandpass');
-    filtAxes = filtfilt(b, a, rawAxes);
+    filtAxes = filter(b, a, rawAxes); % filtr causal para luego C++
 end
