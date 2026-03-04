@@ -9,6 +9,7 @@ end
 
 [imu_table, t] = load_and_clean_imu(imu_file(1), folder_path);
 
-acc = imu_table.Y;
+acc_mps2 = imu_table.Y;
+acc = acc_mps2 / 9.81;
 
 end
