@@ -1,4 +1,4 @@
-
+%DEF
 % KEY PROCESSING STEPS:
 %   1. IMU SYNC: Calculates time lag using acceleration signals.
 %   2. DYNAMIC CROP: Automatically crops the start (Lag + 10s Margin) to 
